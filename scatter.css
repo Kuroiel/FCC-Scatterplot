@@ -1,0 +1,35 @@
+#title {
+  text-align: center;
+}
+#everything {
+  justify-content: center;
+}
+#tooltip {
+  opacity: 0;
+  width: 200px;
+  height: 100px;
+  position: fixed;
+  z-index: 2;
+  bottom: 250px;
+  left: 500px;
+}
+svg {
+  margin: 20px;
+  padding: 30px;
+}
+#x-axis {
+  z-index: 6;
+}
+#dopeLegend {
+  color: red;
+}
+#cleanLegend {
+  color: blue;
+}
+#legend {
+  position: relative;
+  z-index: 4;
+  bottom: 550px;
+  left: 300px;
+  width: 300px;
+}
