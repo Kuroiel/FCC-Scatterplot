@@ -20,7 +20,7 @@ var butMyFormat = d3.timeFormat("%M:%S");
 
 d3.json(
   "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json"
-).then(function(data) {
+).then(function (data) {
   let years = [];
   let years2 = [];
 
@@ -88,28 +88,28 @@ d3.json(
     .enter()
     .append("circle")
     .attr("class", "dot")
-    .attr("cx", function(d, i) {
+    .attr("cx", function (d, i) {
       return xScale(d[0]);
     })
-    .attr("cy", function(d, i) {
+    .attr("cy", function (d, i) {
       return yScale(times[i]);
     })
     .attr("transform", "translate(32,20)")
     .attr("r", 5)
-    .attr("data-xvalue", function(d, i) {
+    .attr("data-xvalue", function (d, i) {
       return data[i].Year;
     })
-    .attr("data-yvalue", function(d, i) {
+    .attr("data-yvalue", function (d, i) {
       return times[i];
     })
-    .style("fill", function(d, i) {
+    .style("fill", function (d, i) {
       if (data[i].Doping) {
         return "red";
       } else {
         return "blue";
       }
     })
-    .on("mouseover", function(d, i) {
+    .on("mouseover", function (d, i) {
       d3.select("#tooltip")
         .style("opacity", 0.8)
         .attr("data-year", data[i].Year)
@@ -124,7 +124,7 @@ d3.json(
             data[i].Name
         );
     })
-    .on("mouseout", function(d, i) {
+    .on("mouseout", function (d, i) {
       d3.select("#tooltip").style("opacity", 0);
     });
 });
