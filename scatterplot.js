@@ -82,6 +82,13 @@ d3.json(
     pushedData.push(tempHold);
   }
 
+  let dopeCheck = function (i) {
+    if (data[i].Doping !== "") {
+      return "Doping: " + data[i].Doping;
+    }
+    return "";
+  };
+
   d3.select("svg")
     .selectAll("circle")
     .data(pushedData)
@@ -115,13 +122,18 @@ d3.json(
         .attr("data-year", data[i].Year)
         .html(
           "Time: " +
-            pushedData[i][1] +
+            data[i].Time +
             "<br>" +
             "Year: " +
-            pushedData[i][0] +
+            data[i].Year +
             "<br>" +
             "Name: " +
-            data[i].Name
+            data[i].Name +
+            "<br>" +
+            "Nationality: " +
+            data[i].Nationality +
+            "<br>" +
+            dopeCheck(i)
         );
     })
     .on("mouseout", function (d, i) {
